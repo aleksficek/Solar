@@ -17,6 +17,12 @@ class App extends Component {
     };
   };
 
+  styles = {
+    fontSize: 10,
+    fontWeight: 'bold',
+  }
+
+
   componentDidMount () {
     this.callApi();
   };
@@ -46,11 +52,31 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Voltage of Cell 1: {this.state.v_cell1}</p>
-        <p>Voltage of Cell 2: {this.state.v_cell2}</p>
-        <p>Voltage of Cell 3: {this.state.v_cell3}</p>
-        <p>Voltage of Cell 4: {this.state.v_cell4}</p>
-        <p>Voltage of Cell 5: {this.state.v_cell5}</p>
+        <div>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 1: </span>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.v_cell1} </span>
+        </div>
+        <div>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 2: </span>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.v_cell2} </span>
+        </div>
+        <div>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 3: </span>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.v_cell3} </span>
+        </div>
+        <div>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 4: </span>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.v_cell4} </span>
+        </div>
+        <div>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 5: </span>
+        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.v_cell5} </span>
+        </div>
+
+        <button style={{ fontSize: 30 }} className="btn btn-outline-primary">Refresh </button>
+
+        {/* <h1>Voltage of Cell 1: {this.state.v_cell1}</h1> */}
+        
       </div>
     );
   }
