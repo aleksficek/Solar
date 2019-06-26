@@ -13,6 +13,8 @@ Back-End (Node.js)
 Firmware (C)
 - Run BarebonesAPI.ino from solar-firm in the Arduino IDE
 - The IP address changes per network and can be found in the serial monitor
+- To upload code to connected ESP, unplug RX connection (plug in after upload complete)
+- Call http://10.78.154.47/test_serial for test data
 
-Database (PostgreSQL)
+Database (MongoDB)
 - This has not been started yet
