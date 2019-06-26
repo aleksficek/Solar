@@ -20,6 +20,20 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Solaris server')
 });
 
+app.get('/test_voltage', (req, res) => {
+  const fake_voltages = {
+    v_cell1: 5,
+    v_cell2: 4,
+    v_cell3: 7,
+    v_cell4: 2,
+    v_cell5: 3,
+    v_shunt: 10,
+    v_panel: 1,
+  };
+  fake_voltages['v_cell1'] = 1000;
+  res.send(fake_voltages)
+});
+
 app.get('/voltage', (req, res) => {
   const initializePromise = initialize('https://jsonplaceholder.typicode.com/todos/1')
   initializePromise.then(function(result) {

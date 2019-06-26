@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.0",
+    "mongodb": "^3.2.7",
     "request": "^2.88.0"
   }
 }
