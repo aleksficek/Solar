@@ -1,5 +1,55 @@
 import React, { Component } from 'react';
 import './App.css';
+import ProgressBar from 'react-bootstrap/ProgressBar'
+import {Line} from 'react-chartjs-2';
+
+const data = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      label: 'My First dataset',
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(75,192,192,0.4)',
+      borderColor: 'rgba(75,192,192,1)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [65, 59, 80, 81, 56, 55, 40]
+    },
+    {
+      label: 'My First dataset',
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(75,192,192,0.4)',
+      borderColor: 'rgba(75,192,192,1)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [65, 59, 80, 81, 56, 55, 40]
+    }
+  ]
+};
 
 class App extends Component {
 
@@ -71,12 +121,16 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Date: </span>
-        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.date} </span>
+          <h2>Line Example</h2>
+          <Line data={data} />
         </div>
         <div>
-        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Time: </span>
-        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.time} </span>
+        <span style={{ fontSize: 30 }} className="badge badge-dark m-2">Date: </span>
+        <span style={{ fontSize: 30 }} className="badge badge-dark m-2">{this.state.date} </span>
+        </div>
+        <div>
+        <span style={{ fontSize: 30 }} className="badge badge-dark m-2">Time: </span>
+        <span style={{ fontSize: 30 }} className="badge badge-dark m-2">{this.state.time} </span>
         </div>
         <div>
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 1: </span>
@@ -84,19 +138,19 @@ class App extends Component {
         </div>
         <div>
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 2: </span>
-        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.voltages.cell2} </span>
+        <span style={{ fontSize: 30 }} className="badge badge-success m-2">{this.state.voltages.cell2} </span>
         </div>
         <div>
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 3: </span>
-        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.voltages.cell3} </span>
+        <span style={{ fontSize: 30 }} className="badge badge-info m-2">{this.state.voltages.cell3} </span>
         </div>
         <div>
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 4: </span>
-        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.voltages.cell4} </span>
+        <span style={{ fontSize: 30 }} className="badge badge-secondary m-2">{this.state.voltages.cell4} </span>
         </div>
         <div>
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Cell 5: </span>
-        <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.voltages.cell5} </span>
+        <span style={{ fontSize: 30 }} className="badge badge-danger m-2">{this.state.voltages.cell5} </span>
         </div>
         <div>
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Panel: </span>
@@ -105,6 +159,13 @@ class App extends Component {
         <div>
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2">Voltage of Shunt: </span>
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2">{this.state.voltages.shunt} </span>
+        </div>
+        <div>
+          <ProgressBar animated striped variant="primary" now={40} label={`${40}%`} />
+          <ProgressBar animated striped variant="success" now={40} label={`${40}%`} />
+          <ProgressBar animated striped variant="info" now={20} />
+          <ProgressBar  animated striped variant="secondary" now={60} />
+          <ProgressBar animated striped variant="danger" now={80} />
         </div>
         <button onClick={this.refreshPage} style={{ fontSize: 30 }} className="btn btn-outline-primary">Refresh </button>        
       </div>
