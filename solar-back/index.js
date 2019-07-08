@@ -53,6 +53,16 @@ app.get('/get_data', (req, res) => {
     });
 });
 
+app.get('/shut_down', (req, res) => {
+  const initializePromise = initialize('https://jsonplaceholder.typicode.com/todos/1')
+  initializePromise.then(function(result) {
+    res.send("The device has been shut down!");
+  }, function(err) {
+    console.log(err);
+    res.send(err);
+  });
+});
+
 app.get('/date_time', (req, res) => {
 
   var datetime = JSON.stringify(new Date()).split('T');
