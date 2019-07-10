@@ -37,6 +37,33 @@ void setup() {
     server.send(200, "text / plain", sample_value);
  
   });
+
+  server.on("/test_uart", []() {   //Define the handling function for the path
+
+    String sample_value = "Nothing";
+    while (Serial.available()) {
+      char w = Serial.read();
+    }
+
+    while (Serial.peek() != 60) {
+      char e = Serial.read(); 
+    }
+    char r = Serial.read();
+  
+    sample_value = Serial.readStringUntil('>');
+    
+    server.send(200, "text / plain", sample_value);
+  });
+
+   server.on("/panel_stop", []() {   //Define the handling function for the path
+    Serial.print('p');
+    server.send(200, "text / plain", "Panel has been stopped!");
+  });
+
+   server.on("/battery_stop", []() {   //Define the handling function for the path
+    Serial.print('b');
+    server.send(200, "text / plain", "Battery has been stopped!");
+  });
  
   server.on("/", handleRootPath);    //Associate the handler function to the path
   server.begin();                    //Start the server
