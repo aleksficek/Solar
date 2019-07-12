@@ -47,10 +47,20 @@ app.get('/get_data', (req, res) => {
     });
 });
 
-app.get('/shut_down', (req, res) => {
+app.get('/panel_shut_down', (req, res) => {
   const initializePromise = initialize('https://jsonplaceholder.typicode.com/todos/1')
   initializePromise.then(function(result) {
-    res.send("The device has been shut down!");
+    res.send(result);
+  }, function(err) {
+    console.log(err);
+    res.send(err);
+  });
+});
+
+app.get('/battery_shut_down', (req, res) => {
+  const initializePromise = initialize('https://jsonplaceholder.typicode.com/todos/1')
+  initializePromise.then(function(result) {
+    res.send(result);
   }, function(err) {
     console.log(err);
     res.send(err);
@@ -87,11 +97,11 @@ app.get('/insert_data', (req, res) => {
 
   const initializePromise = initialize('https://jsonplaceholder.typicode.com/todos/1')
   initializePromise.then(function(result) {
-    // item.voltages.cell1 = Number(result[2] + "." + result[4] + result[6] + result[8])
-    // item.voltages.cell2 = Number(result[10] + "." + result[12] + result[14] + result[16])
-    // item.voltages.cell3 = Number(result[18] + "." + result[20] + result[22] + result[24])
-    // item.voltages.cell4 = Number(result[26] + "." + result[28] + result[30] + result[32])
-    // item.voltages.cell5 = Number(result[34] + "." + result[36] + result[38] + result[40])
+    // item.voltages.cell1 = Number(result[0] + "." + result[1] + result[2] + result[3])
+    // item.voltages.cell2 = Number(result[4] + "." + result[5] + result[6] + result[7])
+    // item.voltages.cell3 = Number(result[8] + "." + result[9] + result[10] + result[11])
+    // item.voltages.cell4 = Number(result[12] + "." + result[13] + result[14] + result[15])
+    // item.voltages.cell5 = Number(result[16] + "." + result[17] + result[18] + result[19])
     console.log(item.date);
   }, function(err) {
     console.log(err);
