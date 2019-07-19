@@ -1,6 +1,6 @@
 # Solar
 
-There are 4 planned components to this project:
+There are 5 planned components to this project:
 
 Front-End (React)
 - Run using yarn start from solar-front directory
@@ -18,3 +18,10 @@ Firmware (C)
 
 Database (MongoDB)
 - This has not been started yet
+
+Real-Time Operating System
+- Used for running the BMU (Battery Management Unit) for the solar panels
+- Context switching between 6 tasks
+- Fixed-Priority Premptive Scheduling
+- Blocking sempahores
+- Mutex's with owner test on release and priority inheritance
