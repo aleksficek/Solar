@@ -10,14 +10,13 @@ Back-End (Node.js)
 - Run using nodemon index.js from solar-back directory
 - This will be available on http://localhost:4000/
 
-Firmware (C)
+Firmware (C++/Arduino)
 - Run BarebonesAPI.ino from solar-firm in the Arduino IDE
 - The IP address changes per network and can be found in the serial monitor
 - To upload code to connected ESP, unplug RX connection (plug in after upload complete)
 - Call http://10.78.154.47/test_serial for test data
 
 Database (MongoDB)
-- This has not been started yet
 
 Real-Time Operating System
 - Used for running the BMU (Battery Management Unit) for the solar panels
